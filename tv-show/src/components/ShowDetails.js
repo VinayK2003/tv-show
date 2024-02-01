@@ -59,8 +59,8 @@ const ShowDetails = () => {
               <img src={show.image.medium} alt={show.name} />
             )}
             <div>
-          <p>Time: {show.schedule.time}</p>
-          <p>Country: {show.network.country.name}</p>
+          <p>Time: {show.schedule.time?show.schedule.time:"N/A"}</p>
+          <p>Country: { (show.network &&show.network.country.name)? show.network.country.name : 'N/A'}</p>
           <p>Genres: {show.genres ? show.genres.join(', ') : 'N/A'}</p>
             </div>
             </div>
