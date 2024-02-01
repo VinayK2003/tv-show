@@ -1,0 +1,25 @@
+.show-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    gap: 25px;
+    /* background-color: white; */
+}
+
+.show-item {
+      background-color: 0f172a;
+    border: 1px solid #80b1ff;
+    padding: 16px;
+    border-style: dotted;
+    text-align: center;
+    color: white;
+  }
+  
+  .heading{
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+  *{
+    background-color: gray;
+  }

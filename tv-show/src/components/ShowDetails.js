@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import "./ShowDetails.css"
 
 const ShowDetails = () => {
   const { id } = useParams(); // Use useParams to get the 'id' parameter
@@ -48,24 +49,44 @@ const ShowDetails = () => {
     <div>
       {show && (
         <>
-          <h1>{show.name}</h1>
-          <p>{show.summary && show.summary.replace(/<[^>]*>/g, '')}</p>
-          <button onClick={handleBookTicket}>Book A Ticket</button>
+          <h1 className='heading'>{show.name}</h1>
+          <div className='summary'>
+            <div>
+
+            </div>
+            <div className='right'>
+          {show.image && show.image.medium && (
+              <img src={show.image.medium} alt={show.name} />
+            )}
+            <div>
+          <p>Time: {show.schedule.time}</p>
+          <p>Country: {show.network.country.name}</p>
+          <p>Genres: {show.genres ? show.genres.join(', ') : 'N/A'}</p>
+            </div>
+            </div>
+            <div className='left'>
+          <p >{show.summary && show.summary.replace(/<[^>]*>/g, '')}</p>
+            </div>
+          </div>
+          <button className=" button btn btn-primary" onClick={handleBookTicket}> Book A Ticket</button>
         </>
       )}
 
       {/* Display the form only if showBookingForm is true */}
       {showBookingForm && (
         <div>
-          <h2>Booking Form</h2>
+          <h2 className='heading'>Booking Form</h2>
+          <div className=' '>
           <form onSubmit={handleFormSubmit}>
-            <label>
+            <label className='heading'>
               Movie Name:
-              <input type="text" value={bookingFormData.movieName} readOnly />
+              
+              <input type="text" class="form-control" value={bookingFormData.movieName} style={{width:"200px"}}></input>
+            <button className=" button btn btn-primary" type='submit'> Submit</button>
             </label>
             {/* Add other relevant form fields */}
-            <button type="submit">Submit</button>
           </form>
+          </div>
         </div>
       )}
     </div>

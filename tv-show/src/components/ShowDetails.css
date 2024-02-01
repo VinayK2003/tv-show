@@ -1,0 +1,20 @@
+*{
+    background-color: #0f172a;
+}
+.summary{
+    margin: 10px;
+    border: 2px solid #80b1ff;
+    border-style:dotted ;
+    color: white;
+}
+.button{
+    margin:0  30px;
+}
+
+.right{
+    display: flex;
+    justify-content: space-around;
+}
+.left{
+    margin: 10px;
+}
